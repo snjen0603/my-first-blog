@@ -3,20 +3,16 @@
         <title>Hyunjin's Django Girls blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Django Girls Seoul</a></h1>
-        </div>
-
-        <div>
-            <h2><a href="">My first post</a></h2>
-            <p>published: 07.09.2019, 16:03</p>
-            <p>It said something fancy on the template, but just get used to me.</p>
-        </div>
-
-        <div>
-            <h2><a href="">My second post</a></h2>
-            <p>published: 07.09.2019, 16:04</p>
-            <p>Live your own life! What about it?</p>
-        </div>
+            <div>
+                    <h1><a href="/">Django Girls Blog</a></h1>
+                </div>
+                
+                {% for post in posts %}
+                    <div>
+                        <p>published: {{ post.published_date }}</p>
+                        <h1><a href="">{{ post.title }}</a></h1>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
     </body>
 </html>
